@@ -26,10 +26,10 @@
 \newcommand{\rbas}[1]{\row{#1}}           % row basis
 
 %% Have to compile ``latex undertilde.ins'' for this: 
-% \usepackage{undertilde} 
+\usepackage{undertilde} 
 %   % have to compile from CTAN ("latex undertilde.ins")
-%   \renewcommand{\row}[1]{\utilde{\mathbf{#1}}}   
-%   \renewcommand{\rbas}[1]{\hat{\row{#1}}}
+  \renewcommand{\row}[1]{\utilde{\mathbf{#1}}}   
+  \renewcommand{\rbas}[1]{\hat{\row{#1}}}
 
 \newcommand{\ket}[1]{\left|#1\right\rangle}       % <#1|
 \newcommand{\bra}[1]{\left\langle#1\right|}       % |#1>

@@ -13,10 +13,11 @@
 \usepackage{amsfonts}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}     % inspire bibs
-\usepackage{aas_macros}				  % ads bibs
+\usepackage{aas_macros}         % ads bibs
 \usepackage{bm}                 % \boldsymbol
 \usepackage{amsthm}
 \usepackage{microtype}
+\usepackage{etoolbox}           % LaTeX primitives
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%  UNUSUAL PACKAGES  %%%%
@@ -24,12 +25,12 @@
 
 %% MATH AND PHYSICS SYMBOLS
 %% ------------------------
-\usepackage{slashed}				% \slashed{k}
-\usepackage{mathrsfs}				% Weinberg-esque letters
-\usepackage{bbm}					  % \mathbbm{1} conflict: XeLaTeX 
-\usepackage{cancel}					
+\usepackage{slashed}        % \slashed{k}
+\usepackage{mathrsfs}       % Weinberg-esque letters
+\usepackage{bbm}            % \mathbbm{1} conflict: XeLaTeX 
+\usepackage{cancel}         
 \usepackage[normalem]{ulem} % for \sout
-\usepackage{youngtab}	    	% Young Tableaux
+\usepackage{youngtab}       % Young Tableaux
 % \usepackage{mleftright}     % \mleft and \mright
 
 %% CONTENT FORMAT AND DESIGN
@@ -37,29 +38,31 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage[hang,flushmargin]{footmisc} % no footnote indent
 
-\usepackage{fancyhdr}		% preprint number
-\usepackage{lipsum}			% block of text 
-% \usepackage{framed}			% boxed remarks / better: mdframed 
-\usepackage{mdframed}   % replace framed
-\usepackage{subcaption}	% subfigures
-\usepackage{cite}			  % group cites
-% \usepackage{xspace}			% macro spacing %% depreciated
+\usepackage{fancyhdr}   % preprint number
+\usepackage{lipsum}     % block of text 
+% \usepackage{framed}     % boxed remarks / better: mdframed 
+% \usepackage{mdframed}   % replace framed
+% \usepackage{tcolorbox}  % replace mdframed
+\usepackage[most]{tcolorbox} % `most' needed for listings
+\usepackage{subcaption} % subfigures
+\usepackage{cite}       % group cites
+% \usepackage{xspace}     % macro spacing %% depreciated
 \usepackage{wrapfig}    
 
 %% TABLES IN LaTeX
 %% ---------------
-\usepackage{booktabs}		% professional tables
-\usepackage{nicefrac}		% fractions in tables,
-\usepackage{multirow}		% multirow elements in a table
-\usepackage{arydshln}		% dashed lines in arrays
+\usepackage{booktabs}   % professional tables
+\usepackage{nicefrac}   % fractions in tables,
+\usepackage{multirow}   % multirow elements in a table
+\usepackage{arydshln}   % dashed lines in arrays
 
 %% ARRAY STRETCH: vertical spacing between rows
 % \renewcommand{\arraystretch}{1.5} %% put this in main text
 
 %% Other Packages and Notes
 %% ------------------------
-\usepackage[font=small]{caption} 	% caption font is small
-\usepackage{float}         			  % for strict placement e.g. [H]
+\usepackage[font=small]{caption}  % caption font is small
+\usepackage{float}                % for strict placement e.g. [H]
 \usepackage{lineno}               % Line numbers (put \linenumbers in main text)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -68,7 +71,7 @@
 
 \usepackage[margin=2.5cm]{geometry} % margins
 \numberwithin{equation}{section}    % set equation numbering
-% \usepackage{marginnote}             % for \marginnote{comment}
+\usepackage{marginnote}             % for \marginnote{comment}
 % \usepackage{mparhack}               % fix for \marginnote
 % \usepackage{marginfix}              % fix for \marginnote
 % \usepackage{adjustbox}              % to rescale elements
@@ -76,7 +79,7 @@
 %% References in two columns, smaller
 %% http://tex.stackexchange.com/questions/20758/
 \usepackage{multicol}
-\usepackage{etoolbox}
+% \usepackage{etoolbox} %% called above
 \usepackage{relsize}
 \patchcmd{\thebibliography}
   {\list}

@@ -1,9 +1,11 @@
 %% LaTeX Paper Template, Flip Tanedo (flip.tanedo@ucr.edu)
 %% GitHub: https://github.com/fliptanedo/paper-template-2022
 
-\documentclass[12pt]{article}
+% \documentclass[12pt]{article}
+\documentclass[12pt]{report}    %% Report has chapters
 
 \input{FlipPreamble}			%% \usepackages, formatting
+    \usepackage{makeidx}
 \input{FlipMacros}              %% Flip's standard macros
 \input{FlipMacros_Comments}     %% Flip's macros for comments
 \input{FlipMacros_Teaching}     %% Flip's macros for course notes
@@ -26,15 +28,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{center}
-    {\huge \textbf{Paper Title} \par}
+    {\large \textsc{UC Riverside Physics 231, Fall 2023} \par}
+    {\huge \textbf{Methods of Theoretical Physics} \par}
+    {\large {A mathematical methods course for first-year physics graduate students} \par}
     \vskip .5cm
     \input{FlipAuthors}
 \end{center}
 
-\begin{abstract}
-\noindent 
-This is a simple template for my papers. It's not very different from the plain article style, but it has most of the macros I use pre-written.
-\end{abstract}
+% \begin{abstract}
+\vspace{2em}\noindent
+Physics 231 is a crash course on mathematical methods necessary to succeed in the first-year physics graduate curriculum at \acro{UC~R}iverside. 
+%
+The focus is how to solve differential equations using Green's functions. This version is revised for Fall 2022. 
+
+\vspace{2em}
+\noindent
+\textsf{Last Compiled: \today}
+
+\noindent
+\url{https://github.com/fliptanedo/P231-2023-Math-Methods}
+% \end{abstract}
+
+
+
+\vspace*{\fill}
+
+\begin{center}
+\includegraphics[height=.1\textwidth]{figures/FlipAmbigram.png}
+\hspace{5em}
+\includegraphics[height=.1\textwidth]{figures/UCRPnA_banner.png}
+\end{center}
+
+
+\newpage
 
 \small
 \setcounter{tocdepth}{2}
@@ -47,30 +73,31 @@ This is a simple template for my papers. It's not very different from the plain 
 %%%  THE CONTENT  %%%
 %%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+\chapter{Mathematical Methods}
+\input{P231_00_Intro}
+\input{P231_01_LinearAlgebra}
+\input{P231_05_Probability}
 
-In the beginning... \lipsum[5]
-
-\input{examples}
-\input{examples_listings}
-\input{examples_bestpractices}
-\input{examples_refs}
+% \input{examples}
+% \input{examples_listings}
+% \input{examples_bestpractices}
+% \input{examples_refs}
 
 
 
 \section*{Acknowledgments}
 
 \acro{PT}\ thanks 
-\emph{your name here}
-for useful comments and discussions. 
+the students of Physics 231 from 2016--2023
+for their patience and feedback.
 %
-\acro{PT} thanks 
-    the Aspen Center for Physics (\acro{NSF} grant \acro{\#1066293})
-    % and the Kavli Institute for Theoretical Physics (\acro{NSF} grant \acro{PHY-1748958})
-    for 
-    its 
-    % their
-    hospitality during a period where part of this work was completed. 
+% \acro{PT} thanks 
+%     the Aspen Center for Physics (\acro{NSF} grant \acro{\#1066293})
+%     % and the Kavli Institute for Theoretical Physics (\acro{NSF} grant \acro{PHY-1748958})
+%     for 
+%     its 
+%     % their
+%     hospitality during a period where part of this work was completed. 
 %
 % \acro{PT} is supported by the \acro{DOE} grant \acro{DE-SC}/0008541.
 \acro{PT} is supported by a \acro{NSF CAREER} award (\#2045333).
@@ -79,9 +106,14 @@ for useful comments and discussions.
 % \appendix
 
 
+
+
 %% Bibliography
-%\bibliographystyle{utcaps} 	% arXiv hyperlinks, preserves caps in title
+\bibliographystyle{utcaps} 	% arXiv hyperlinks, preserves caps in title
 %\bibliographystyle{utphys} 	% arXiv hyperlinks
-% \bibliography{bib title without .bib}
+\bibliography{refs}
+
+\printindex
+
 
 \end{document}
